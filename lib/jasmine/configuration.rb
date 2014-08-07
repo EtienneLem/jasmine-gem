@@ -4,6 +4,7 @@ module Jasmine
     attr_writer :jasmine_files, :boot_files, :src_files, :spec_files, :runner_boot_files
     attr_accessor :jasmine_path, :spec_path, :boot_path, :src_path, :image_path, :runner_boot_path
     attr_accessor :jasmine_dir, :spec_dir, :boot_dir, :src_dir, :images_dir, :runner_boot_dir
+    attr_accessor :assets_server
     attr_accessor :formatters
     attr_accessor :host
     attr_accessor :spec_format
@@ -25,6 +26,7 @@ module Jasmine
       @spec_files = lambda { [] }
       @runner = lambda { |config| }
       @rack_options = {}
+      @assets_server = ''
 
       @formatters = [Jasmine::Formatters::Console]
 

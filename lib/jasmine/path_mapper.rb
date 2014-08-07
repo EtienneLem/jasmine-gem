@@ -30,7 +30,14 @@ module Jasmine
         if path[0..3] == 'http'
           path
         else
-          File.join(add_path, (path.gsub(remove_path, '')))
+          if (server = @config.assets_server) && add_path.match(/^\/(__spec__)?$/)
+            add_path = server
+          end
+
+          path = File.join(add_path, (path.gsub(remove_path, '')))
+
+          # TODO: Make that a config
+          path.gsub('.coffee', '.js')
         end
       end
     end

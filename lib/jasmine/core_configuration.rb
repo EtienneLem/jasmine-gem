@@ -27,5 +27,9 @@ module Jasmine
     def images_dir
       @core.images_dir
     end
+
+    def assets_server
+      @core.assets_server
+    end
   end
 end

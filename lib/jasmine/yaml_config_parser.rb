@@ -27,6 +27,11 @@ module Jasmine
       File.join(@pwd, loaded_yaml['boot_dir'])
     end
 
+    def assets_server
+      return nil unless server = loaded_yaml['assets_server']
+      server
+    end
+
     def src_files
       @path_expander.call(src_dir, loaded_yaml['src_files'] || [])
     end

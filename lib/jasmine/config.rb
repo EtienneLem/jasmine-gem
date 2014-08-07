@@ -96,6 +96,7 @@ module Jasmine
         config.boot_dir = yaml_config.boot_dir if yaml_config.boot_dir
         config.boot_files = lambda { yaml_config.boot_files } if yaml_config.boot_files.any?
 
+        config.assets_server = yaml_config.assets_server
         config.src_dir = yaml_config.src_dir
         config.src_files = lambda { yaml_config.src_files }
         config.css_files = lambda { yaml_config.css_files }
